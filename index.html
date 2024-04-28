@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Cat Animation</title>
+    <style>
+      body {
+        margin: 0;
+        padding: 0;
+        overflow: hidden;
+        background: linear-gradient(
+          /* to right, */ rgb(201, 111, 111),
+          rgb(96, 96, 225)
+        ); /* Mixed background color */
+      }
+
+      .container {
+        position: relative;
+        width: 100%;
+        margin-left: 30px;
+        margin-right: 40px;
+        height: 100vh;
+      }
+
+      .cat {
+        position: absolute;
+        bottom: 50%;
+        width: 150px;
+        animation-duration: 3s;
+        animation-timing-function: linear;
+        animation-iteration-count: infinite;
+      }
+
+      .cat1 {
+        left: 10%; /* Adjusted position with margin */
+        margin-top: 20%;
+        transform: translateX(-10%);
+        animation-name: slideLeft;
+      }
+
+      .cat2 {
+        right: 10%; /* Adjusted position with margin */
+        margin-top: 20%;
+        transform: translateX(10%) scaleX(-1);
+        animation-name: slideRight;
+      }
+
+      @keyframes slideLeft {
+        0% {
+          left: 40%;
+        }
+        100% {
+          left: 0%;
+        }
+      }
+
+      @keyframes slideRight {
+        0% {
+          right: 40%;
+        }
+        100% {
+          right: 0%;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <img
+        src="https://i.pinimg.com/originals/03/a4/d5/03a4d55748dfefa852df76b085708c0a.png"
+        alt="Cat 1"
+        class="cat cat1"
+      />
+      <img src="../../../../cat.png" alt="Cat 2" class="cat cat2" />
+    </div>
+  </body>
+</html>
